@@ -13,15 +13,13 @@
 		<p>soy web designer, dejo algunos links utiles</p>
 		<a href="http://dolarhoy.com">Cotizacion Dolar Hoy</a>
 	</div>
-	<div>
-		<p>publicado: 12:00, 09.03.2020</p>
-		<h2><a href="/">Primer posteo!</a></h2>
-		<p>Bienvenidos a todos, este es mi primer laburo, espero de muchos otros, el blog, esta siendo diseñado con la ayuda del tutorial Django Girls, gracias a juan alvarez por su apoyo en este desarrollo</p><br><br>
-	</div>
-	<div>
-		<p>publicado: 12:05, 09.03.2020</p>
-		<h2><a href="/">Segundo posteo!</a></h2>
-		<p>Este posteo es para chequear que este todo en regla aca en el blog, me estoy tomando unos matienzos, y programando, espero dentro de un año estar haciendo lo mismo mirando el mar en las maldivas</p><br><br>
-	</div>
+	
+	{% for post in posts %}
+		<div>
+			<p> Publicado : {{post.published_date}}</p>
+			<h2><a href="">{{post.title}}</a></h2>
+			<p>{{post.text|linebreaksbr}}</p>
+		</div>
+	{% endfor %}	
 </body>
 </htlm>
